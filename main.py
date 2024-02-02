@@ -45,14 +45,6 @@ class Example(QWidget):
         """При закрытии формы подчищаем за собой"""
         os.remove(self.map_file)
 
-    def keyPressEvent(self, event):
-        if event.key() == Qt.Key_PageUp:
-            self.getImage()
-            self.initUI()
-        elif event.key() == Qt.Key_PageDown:
-            self.getImage()
-            self.initUI()
-
 
 
 

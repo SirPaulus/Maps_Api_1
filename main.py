@@ -7,7 +7,8 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 
 SCREEN_SIZE = [600, 450]
-
+map_ll = [37.530887, 55.703118]
+scale = 1
 
 class Example(QWidget):
     def __init__(self):
@@ -16,7 +17,7 @@ class Example(QWidget):
         self.initUI()
 
     def getImage(self):
-        map_request = "http://static-maps.yandex.ru/1.x/?ll=37.530887,55.703118&spn=0.002,0.002&l=map"
+        map_request = f"http://static-maps.yandex.ru/1.x/?ll={map_ll[0]},{map_ll[1]}&spn=0.002,0.002&scale={scale}&l=map"
         response = requests.get(map_request)
 
         if not response:
